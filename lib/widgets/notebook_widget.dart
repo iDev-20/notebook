@@ -19,39 +19,41 @@ class NoteBookWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: SizedBox(
-          height: 164,
-          child: Stack(
-            children: [
-              Image.asset(color),
-              Positioned(
-                left: 15,
-                right: 0,
-                bottom: 0,
-                top: 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (icon != null)
-                      Icon(
-                        icon,
-                        size: 25,
+        height: 164,
+        child: Stack(
+          children: [
+            Image.asset(color),
+            Positioned(
+              left: 15,
+              right: 0,
+              bottom: 0,
+              top: 0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (icon != null)
+                    Icon(
+                      icon,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                  const SizedBox(height: 6),
+                  Text(
+                    label,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Colors.white,
-                      ),
-                    Text(
-                      label,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
-                ),
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  )
+                ],
               ),
-            ],
-          ),),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
