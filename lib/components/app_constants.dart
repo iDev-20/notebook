@@ -8,5 +8,5 @@ final kinputDecorationTextField = InputDecoration(
     borderSide: BorderSide.none,
   ),
   filled: true,
-  fillColor: Colors.grey[200],
+  fillColor: const Color(0xFF2B2930),
 );

@@ -1,8 +1,11 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:notebook/components/app_constants.dart';
+import 'package:notebook/widgets/notebook_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -163,9 +166,22 @@ class _HomePageState extends State<HomePage> {
             height: 164,
             child: ListView(
               scrollDirection: Axis.horizontal,
+              children: [
+                NoteBookWidget(
+                  onPressed: () async {
+                    final result = await showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog.adaptive();
+                        });
+                  },
+                  label: 'Add \nNotebook',
+                  color: folderColors[Random().nextInt(folderColors.length)],
+                ),
+              ],
             ),
           )
-          ],
+        ],
       ),
     );
   }

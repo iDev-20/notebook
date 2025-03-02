@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final MaterialTheme materialTheme = MaterialTheme(textTheme);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Notebook App',
       theme: materialTheme.light(),
       darkTheme: materialTheme.dark(),
